@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import "./styles/index.css";
 
 import store from "@/store";
+import "@/assets/icons/index";
 
 const root = document.getElementById("root");
 

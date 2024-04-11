@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
+import SvgIcon from "@/components/SvgIcon";
 
 const Header = () => {
+  const navList = [
+    { label: "首页", icon: "home", path: "/" },
+    { label: "博客", icon: "blog", path: "/blog" },
+    { label: "归档", icon: "archive", path: "/archive" },
+    { label: "音乐", icon: "music", path: "/music" },
+    { label: "关于", icon: "about", path: "/about" },
+  ];
+
   return (
     <header className="site-top">
       <div className="site-branding">
@@ -12,11 +21,17 @@ const Header = () => {
         </a>
       </div>
 
-      <div className="nav nav1">
-        <li>
-          <Link to="/">首页</Link>
-          <Link to="/work">归档</Link>
-        </li>
+      <div className="flex">
+        {navList.map((item, index) => {
+          return (
+            <li key={index} className={"list-none ml-6 h-16 "}>
+              <Link to={item.path} className={"h-full flex items-center"}>
+                <SvgIcon icon={item.icon} size={18} />
+                {item.label}
+              </Link>
+            </li>
+          );
+        })}
       </div>
     </header>
   );

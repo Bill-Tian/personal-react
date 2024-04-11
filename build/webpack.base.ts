@@ -45,7 +45,16 @@ const baseConfig: Configuration = {
                 ],
             },
             {
+                test: /.svg$/,
+                loader: "svg-sprite-loader",
+                include: path.resolve(__dirname, "../src/assets/icons"),
+                options: {
+                    symbolId: "icon-[name]"
+                }
+            },
+            {
                 test: /\.(png|jpe?g|gif|svg)$/i, // 匹配图片文件
+                exclude: path.resolve(__dirname, "../src/assets/icons"), // 不处理 svg类型文件
                 type: "asset", // type选择asset
                 parser: {
                     dataUrlCondition: {
