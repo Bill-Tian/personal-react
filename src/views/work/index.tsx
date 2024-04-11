@@ -1,10 +1,14 @@
-const Work = () => {
-    return (
-        <div>
-            <h2>webpack5-react-ts</h2>
-            <div className={'text'}>Optimizing font loading</div>
-        </div>
-    )
-}
+import { useSelector } from "react-redux";
 
-export default Work
+const Work = () => {
+  const selector = useSelector((state: any) => state.task);
+  return (
+    <div>
+      <h3>{selector.taskName}</h3>
+      <h2>webpack5-react-ts</h2>
+      <div className={"text"}>Optimizing font loading</div>
+    </div>
+  );
+};
+
+export default Work;
