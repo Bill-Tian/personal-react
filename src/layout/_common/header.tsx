@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SvgIcon from "@/components/SvgIcon";
+import "./index.less";
 
 const Header = () => {
   const navList = [
@@ -11,13 +12,14 @@ const Header = () => {
   ];
 
   return (
-    <header className="site-top">
+    <header className="flex justify-between items-center px-8 bg-sky-300">
       <div className="site-branding">
         <a href="https://sakura.2heng.xin">
-          {/* <img
-                        style={{ width: "200px" }}
-                        src="https://sakura.2heng.xin/wp-content/uploads/2018/06/mashiro-logo.png"
-                    /> */}
+          <span
+            className={
+              "inline-block w-60 h-12 bg-[url(https://www.yanceyleo.com/images/logo-light.png)] bg-center bg-cover bg-no-repeat"
+            }
+          />
         </a>
       </div>
 
@@ -25,8 +27,8 @@ const Header = () => {
         {navList.map((item, index) => {
           return (
             <li key={index} className={"list-none ml-6 h-16 "}>
-              <Link to={item.path} className={"h-full flex items-center"}>
-                <SvgIcon icon={item.icon} size={18} />
+              <Link to={item.path} className={"abc relative h-full flex items-center text-[#666666]"}>
+                <SvgIcon icon={item.icon} size={18} style={{ marginRight: "6px" }} />
                 {item.label}
               </Link>
             </li>

@@ -1,0 +1,19 @@
+a::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 0;
+  background-color: #ffa500;
+  bottom: 0;
+  left: 0;
+  transition: width 300ms ease 0s;
+}
+
+a:hover {
+  color: rgb(255, 165, 0);
+  transition: color 300ms ease 0s;
+}
+
+a:hover::after {
+  width: 100%;
+}
