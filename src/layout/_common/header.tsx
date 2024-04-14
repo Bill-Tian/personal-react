@@ -12,7 +12,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="flex justify-between items-center px-8 bg-sky-300">
+    <header className="fixed w-full opacity-90 z-10 flex justify-between items-center px-8 bg-sky-300">
       <div className="site-branding">
         <a href="https://sakura.2heng.xin">
           <span
