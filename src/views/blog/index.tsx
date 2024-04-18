@@ -1,5 +1,7 @@
 import { useSelector } from "react-redux";
 import "./index.less";
+import { getArticleAllrApi } from "@/api/article";
+import { useEffect, useState } from "react";
 
 const Work = () => {
   const selector = useSelector((state: any) => state.task);
@@ -25,7 +27,17 @@ const Work = () => {
     },
   ];
 
-  const tableData: any = [];
+  const [tableData, setTableData] = useState([]);
+
+  // 获取blog表格数据
+  const getListOfData = () => {
+    getArticleAllrApi().then((res) => {
+      if (res.code === 0) {
+        setTableData(res.data);
+      }
+    });
+  };
+  getListOfData();
 
   const toDetail = (item: any) => {
     console.log(item);
