@@ -3,12 +3,12 @@
 // import smallImg from '@/assets/imgs/small.jpg'
 // import bigImg from '@/assets/imgs/big.png'
 
-import { useRoutes } from "react-router-dom"
-import routes from "@/router/index"
-import HomeHeader from "@/layout/_common/header"
+import { useRoutes } from "react-router-dom";
+import routes from "@/router/index";
+import HomeHeader from "@/layout/_common/header";
 
 function App() {
-  const element = useRoutes(routes)
+  const element = useRoutes(routes);
   return (
     <>
       <HomeHeader />
