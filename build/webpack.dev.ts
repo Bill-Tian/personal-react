@@ -20,7 +20,17 @@ const devConfig: Configuration = merge(baseConfig, {
         historyApiFallback: true, // 解决history路由404问题
         static: {
             directory: path.join(__dirname, "../public"), //托管静态资源public文件夹
-        }
+        },
+        proxy: [
+            {
+                context: ['/apis'],
+                target: "http://localhost:8000",
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/apis': ''
+                }
+            }
+        ]
     },
 })
 

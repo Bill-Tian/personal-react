@@ -1,15 +1,19 @@
-import React from "react";
-import "@/App.css";
-import lessStyles from "./app.module.less";
+// import "@/App.css";
+// import "./app.less";
+// import smallImg from '@/assets/imgs/small.jpg'
+// import bigImg from '@/assets/imgs/big.png'
+
+import { useRoutes } from "react-router-dom";
+import routes from "@/router/index";
+import HomeHeader from "@/layout/_common/header";
 
 function App() {
+  const element = useRoutes(routes);
   return (
-    <div>
-      <h2>webpack5-react-ts</h2>
-      <div className={lessStyles["lessBox"]}>
-        <div className={lessStyles["box"]}>lessBox</div>
-      </div>
-    </div>
+    <>
+      <HomeHeader />
+      {element}
+    </>
   );
 }
 

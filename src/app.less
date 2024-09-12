@@ -1,0 +1,38 @@
+@color: rgb(0, 102, 255);
+
+@font-face {
+  font-family: "Mynerve";
+  src: local("Mynerve"),
+    url("@/assets/fonts/Mynerve-Regular.ttf") format("truetype");
+  font-weight: bold;
+}
+
+.lessBox {
+  .box {
+    color: @color;
+    background-color: lightblue;
+    transform: translateX(100);
+
+    &:before {
+      @arr: "hello", "world";
+      content: ` @{arr}.join(" ") .toUpperCase() `;
+    }
+  }
+}
+
+.smallImg {
+  width: 69px;
+  height: 75px;
+  background: url("@/assets/imgs/small.jpg") no-repeat;
+  background-size: 100%;
+}
+.bigImg {
+  width: 232px;
+  height: 154px;
+  background: url("@/assets/imgs/big.png") no-repeat;
+  background-size: 100%;
+}
+
+.text {
+  font-family: Mynerve;
+}
